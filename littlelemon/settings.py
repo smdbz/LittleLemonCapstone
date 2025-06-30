@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'drf_spectacular'
 ]
 
 MIDDLEWARE = [
@@ -140,6 +141,17 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication'
     ),
+
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 DJOSER = {"USER_ID_FIELD": "username"}
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Little Lemon Capstone',
+    'DESCRIPTION': 'Showcase of a restaurant with booking API',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    # OTHER SETTINGS
+}
